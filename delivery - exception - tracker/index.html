@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery Exception Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Delivery Exception Tracker</h1>
+        <p>Internal Operations Dashboard</p>
+    </header>
+
+    <main class="container">
+
+        <!-- Dashboard Cards -->
+        <section class="dashboard">
+            <div class="card">
+                <h3>Total Issues</h3>
+                <p id="totalIssues">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Pending</h3>
+                <p id="pendingIssues">0</p>
+            </div>
+
+            <div class="card">
+                <h3>In Progress</h3>
+                <p id="progressIssues">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Resolved</h3>
+                <p id="resolvedIssues">0</p>
+            </div>
+        </section>
+
+        <!-- Add Exception Form -->
+        <section class="form-section">
+
+            <h2>Report Delivery Exception</h2>
+
+            <form id="exceptionForm">
+
+                <div class="form-group">
+                    <label for="orderId">Order ID</label>
+                    <input
+                        type="text"
+                        id="orderId"
+                        placeholder="Example: ORD1001"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="customerName">Customer Name</label>
+                    <input
+                        type="text"
+                        id="customerName"
+                        placeholder="Enter customer name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input
+                        type="text"
+                        id="location"
+                        placeholder="Example: Chennai"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="issueType">Issue Type</label>
+
+                    <select id="issueType" required>
+                        <option value="">Select issue</option>
+                        <option value="Delayed">Delayed</option>
+                        <option value="Damaged">Damaged</option>
+                        <option value="Wrong Address">Wrong Address</option>
+                        <option value="Customer Unavailable">
+                            Customer Unavailable
+                        </option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description</label>
+
+                    <textarea
+                        id="description"
+                        placeholder="Describe the problem"
+                        required
+                    ></textarea>
+                </div>
+
+                <button type="submit">Add Exception</button>
+
+            </form>
+
+        </section>
+
+        <!-- Search and Filter -->
+        <section class="filter-section">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search by Order ID or Customer..."
+            >
+
+            <select id="statusFilter">
+                <option value="All">All Status</option>
+                <option value="Pending">Pending</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Resolved">Resolved</option>
+            </select>
+
+        </section>
+
+        <!-- Exception Table -->
+        <section class="table-section">
+
+            <h2>Delivery Exceptions</h2>
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Location</th>
+                            <th>Issue</th>
+                            <th>Description</th>
+                            <th>Status</th>
+                            <th>Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="exceptionTable">
+                        <!-- JavaScript will add rows here -->
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Delivery Exception Tracking System © 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
